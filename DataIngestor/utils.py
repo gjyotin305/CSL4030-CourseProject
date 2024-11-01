@@ -19,7 +19,7 @@ def ingest_from_web(url: AnyStr) -> bool:
     logger.debug(f"FINAL URL {final_url}")
 
     response = requests.get(final_url, headers=headers)
-    filename = f"scraped_{random.randint(696, 6969)}.log"
+    filename = f"logs/scraped_{random.randint(696, 6969)}.log"
 
     with open(filename, "w") as f:
         f.write(response.text)
