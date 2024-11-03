@@ -1,0 +1,7 @@
+filebeat.inputs:
+  - type: log
+    paths:
+      - /path/to/your/logs/*.log  # Replace with the path to your log files
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
