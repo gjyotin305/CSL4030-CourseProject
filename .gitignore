@@ -5,7 +5,6 @@ __pycache__/
 
 ingestors/
 *.log
-# C extensions
 *.so
 *.pdf
 
