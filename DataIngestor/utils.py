@@ -1,11 +1,11 @@
-from typing import AnyStr
+from typing import AnyStr, Union
 from loguru import logger
 import validators
 import random
 import os
 import requests
 
-def ingest_from_web(url: AnyStr) -> bool:
+def ingest_from_web(url: AnyStr) -> Union[bool, str]:
     if isinstance(validators.url(url), validators.ValidationError):
         logger.error(f"URL IS NOT VALID {url}")
         return False
@@ -27,4 +27,4 @@ def ingest_from_web(url: AnyStr) -> bool:
         logger.info(f"WRITING SCRAPED LOGS IN {filename}")
         f.close()
 
-    return True
+    return True, response.text
