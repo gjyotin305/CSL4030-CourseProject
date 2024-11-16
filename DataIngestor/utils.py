@@ -2,6 +2,7 @@ from typing import AnyStr
 from loguru import logger
 import validators
 import random
+import os
 import requests
 
 def ingest_from_web(url: AnyStr) -> bool:
@@ -14,7 +15,7 @@ def ingest_from_web(url: AnyStr) -> bool:
     prefix = "https://r.jina.ai/"
 
     final_url = prefix + url
-    headers = {'Authorization': 'Bearer jina_35bef1cdd139441c966ffaf4a344ec29tuXSnaj1nK_Ta4ptI77eJw5CUpLS'}
+    headers = {'Authorization': f'Bearer {os.getenv("JINAI_API_KEY")}'}
 
     logger.debug(f"FINAL URL {final_url}")
 
