@@ -21,7 +21,8 @@ def pipeline_populate_db(url: AnyStr, name_dataset: str) -> bool:
     logger.info("STEP 2 OF PIPELINE - TEXT SPLITTING")
 
     chunks, _ = text_splitter(
-        raw_text=raw_data
+        raw_text=raw_data,
+        split_size=500
     )
 
     logger.info("STEP 3 OF PIPELINE - PERFORMING NER FOR PIID REPLACEMENT")
@@ -50,7 +51,7 @@ def pipeline_populate_db(url: AnyStr, name_dataset: str) -> bool:
 
     logger.info(f"NUMBER OF MODIFIED CHUNKS | {len(hidden_chunks)}")
 
-    token_length = [200 for i in range(0, len(hidden_chunks))]
+    token_length = [500 for i in range(0, len(hidden_chunks))]
 
     logger.info(f"STEP 5 | UPLOAD TO HUGGING FACE WITH YOUR MODIFIED DATA")
 
