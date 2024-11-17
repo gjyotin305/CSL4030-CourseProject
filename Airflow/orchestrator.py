@@ -1,4 +1,3 @@
-import requests
 import tiktoken
 import spacy
 import os
@@ -13,8 +12,6 @@ from spacy.pipeline import EntityRuler
 
 
 def pipeline_populate_db(url: AnyStr, name_dataset: str) -> bool:
-    enc = tiktoken.get_encoding("o200k_base")
-
     logger.info("STEP 1 OF PIPELINE - DATA INGESTION")
 
     status, raw_data = ingest_from_web(
