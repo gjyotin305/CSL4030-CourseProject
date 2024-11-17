@@ -25,8 +25,6 @@ def perform_NER(
 
             return_dict[ents.label_].append(ents.text)
 
-
-
     logger.info(f"NEW TEXT | {modified_text}")
 
     return modified_text, return_dict
