@@ -3,7 +3,7 @@ import spacy
 import os
 from loguru import logger
 from datasets import Dataset
-from utils import text_splitter
+from .utils import text_splitter
 from DataIngestor.utils import ingest_from_web
 from PIID_preserve.utils import perform_NER
 from PIID_preserve.constants import REPLACEMENT_DICT, RETURN_DICT

@@ -6,7 +6,7 @@ def text_splitter(
     raw_text: str, 
     split_size: int = 200
 ) -> Union[List[str], int]:
-    enc = tiktoken.get_encoding("cl100K_base")
+    enc = tiktoken.get_encoding("cl100k_base")
     tokens = enc.encode(raw_text)
     logger.info(f"Number of Tokens {len(tokens)}")
 

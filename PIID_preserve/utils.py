@@ -1,6 +1,6 @@
 import spacy
 from loguru import logger
-from constants import RETURN_DICT, REPLACEMENT_DICT
+from .constants import RETURN_DICT, REPLACEMENT_DICT
 from typing import List, Dict
 
 
